@@ -1,3 +1,14 @@
+pkgdatadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
+moduledir = join_paths(pkgdatadir, 'shortcircuit')
+gnome = import('gnome')
+
+gnome.compile_resources('shortcircuit',
+  'in.bharatkalluri.shortcircuit.gresource.xml',
+  gresource_bundle: true,
+  install: true,
+  install_dir: pkgdatadir,
+)
+
 desktop_file = i18n.merge_file(
   input: 'in.bharatkalluri.shortcircuit.desktop.in',
   output: 'in.bharatkalluri.shortcircuit.desktop',
@@ -40,10 +51,8 @@ if compile_schemas.found()
   )
 endif
 
-
-icondir = join_paths(get_option('datadir'), 'icons/hicolor')
 install_data(
     'icons/'+'in.bharatkalluri.shortcircuit'+'.svg',
-    install_dir: join_paths(icondir, 'scalable/apps')
+    install_dir: join_paths(join_paths(get_option('datadir'), 'icons/hicolor'), 'scalable/apps')
 )
 

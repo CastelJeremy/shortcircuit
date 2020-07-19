@@ -3,5 +3,6 @@ Name=shortcircuit
 Exec=shortcircuit
 Terminal=false
 Type=Application
+Icon=in.bharatkalluri.shortcircuit
 Categories=GTK;
 StartupNotify=true

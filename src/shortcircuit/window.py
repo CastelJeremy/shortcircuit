@@ -29,6 +29,7 @@ class ShortcircuitWindow(Gtk.ApplicationWindow):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.set_icon_name('in.bharatkalluri.shortcircuit')
 
         self.transformer_search_entry: Gtk.SearchEntry = TransformerSearchEntry.get_instance()
 

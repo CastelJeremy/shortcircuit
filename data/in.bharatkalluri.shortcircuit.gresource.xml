@@ -4,5 +4,6 @@
     <file>ui/window.ui</file>
     <file>ui/transformer_search_entry.ui</file>
     <file>ui/about_dialog.ui</file>
+    <file>icons/in.bharatkalluri.shortcircuit.svg</file>
   </gresource>
 </gresources>

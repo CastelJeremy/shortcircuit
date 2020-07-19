@@ -1,14 +1,3 @@
-pkgdatadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
-moduledir = join_paths(pkgdatadir, 'shortcircuit')
-gnome = import('gnome')
-
-gnome.compile_resources('shortcircuit',
-  'shortcircuit.gresource.xml',
-  gresource_bundle: true,
-  install: true,
-  install_dir: pkgdatadir,
-)
-
 python = import('python')
 python3 = import('python3')
 pythondir = join_paths(get_option('prefix'), python3.sysconfig_path('purelib'))
