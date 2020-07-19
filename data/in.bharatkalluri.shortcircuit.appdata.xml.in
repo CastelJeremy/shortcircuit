@@ -1,8 +1,58 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2020 Bharat Kalluri <{{bharatkalluri@protonmail.com}}> -->
 <component type="desktop">
-	<id>in.bharatkalluri.shortcircuit.desktop</id>
-	<metadata_license>CC0-1.0</metadata_license>
-	<project_license>GPL-3.0-or-later</project_license>
-	<description>
-	</description>
+    <id>in.bharatkalluri.shortcircuit</id>
+    <name>Short Circuit</name>
+    <developer_name>Bharat Kalluri</developer_name>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0+</project_license>
+    <url type="homepage">https://gitlab.gnome.org/Bharatkalluri/short-circuit</url>
+    <screenshots>
+        <screenshot type="default">
+			<screenshot type="default">
+            	<image>https://gitlab.gnome.org/Bharatkalluri/short-circuit/-/raw/master/media/screenshot.png</image>
+        	</screenshot>
+        </screenshot>
+    </screenshots>
+    <releases>
+       <release version="0.1" timestamp="1594844650">
+            <description>
+                <p>Short Circuit is a developer scratchpad made for GNOME!</p>
+				<p>The next time you copy paste some text to do some text manipulation like base64 encode/decode, json formatting etc..</p>
+				<p>You can just copy paste in shortcircuit and control T your way through everything!</p>
+            </description>
+        </release>
+    </releases>
+    <launchable type="desktop-id">in.bharatkalluri.shortcircuit.desktop</launchable>
+    <content_rating type="oars-1.1">
+        <content_attribute id="violence-cartoon">none</content_attribute>
+        <content_attribute id="violence-fantasy">none</content_attribute>
+        <content_attribute id="violence-realistic">none</content_attribute>
+        <content_attribute id="violence-bloodshed">none</content_attribute>
+        <content_attribute id="violence-sexual">none</content_attribute>
+        <content_attribute id="violence-desecration">none</content_attribute>
+        <content_attribute id="violence-slavery">none</content_attribute>
+        <content_attribute id="violence-worship">none</content_attribute>
+        <content_attribute id="drugs-alcohol">none</content_attribute>
+        <content_attribute id="drugs-narcotics">none</content_attribute>
+        <content_attribute id="drugs-tobacco">none</content_attribute>
+        <content_attribute id="sex-nudity">none</content_attribute>
+        <content_attribute id="sex-themes">none</content_attribute>
+        <content_attribute id="sex-homosexuality">none</content_attribute>
+        <content_attribute id="sex-prostitution">none</content_attribute>
+        <content_attribute id="sex-adultery">none</content_attribute>
+        <content_attribute id="sex-appearance">none</content_attribute>
+        <content_attribute id="language-profanity">none</content_attribute>
+        <content_attribute id="language-humor">none</content_attribute>
+        <content_attribute id="language-discrimination">none</content_attribute>
+        <content_attribute id="social-chat">none</content_attribute>
+        <content_attribute id="social-info">none</content_attribute>
+        <content_attribute id="social-audio">none</content_attribute>
+        <content_attribute id="social-location">none</content_attribute>
+        <content_attribute id="social-contacts">none</content_attribute>
+        <content_attribute id="money-purchasing">none</content_attribute>
+        <content_attribute id="money-gambling">none</content_attribute>
+    </content_rating>
+
 </component>

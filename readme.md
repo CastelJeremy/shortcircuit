@@ -4,6 +4,10 @@
 
 <p>A developer scratchpad built for GNOME.</p>
 
+## Screenshot
+
+![Screenshot](./media/screenshot.png)
+
 ## What does it do?
 
 If you have ever found yourself copy pasting stuff into the browser or in VS Code for
@@ -18,7 +22,7 @@ linux app which takes care of all this for you!
 Just open short-circuit, paste the text, select the transformer and you are good to go!
 
 ### Credits
-- This app was inspired by [Boop](boop.okat.best/), since it does not exist for linux. I 
+- This app was inspired by [Boop](https://boop.okat.best/), since it does not exist for linux. I 
     thought it would be a good learning experience for me to make this in GTK/python.
 - Thanks to Bilal for helping me out over at #gnome when I was stuck.
 
