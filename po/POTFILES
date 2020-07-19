@@ -1,0 +1,7 @@
+data/in.bharatkalluri.shortcircuit.desktop.in
+data/in.bharatkalluri.shortcircuit.appdata.xml.in
+data/in.bharatkalluri.shortcircuit.gschema.xml
+src/window.ui
+src/main.py
+src/window.py
+

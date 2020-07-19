@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.36.0 -->
+<interface>
+  <requires lib="gtk+" version="3.22"/>
+  <object class="GtkSearchEntry" id="transformer_search_entry">
+    <property name="visible">True</property>
+    <property name="can_focus">True</property>
+    <property name="primary_icon_name">edit-find-symbolic</property>
+    <property name="primary_icon_activatable">False</property>
+    <property name="primary_icon_sensitive">False</property>
+  </object>
+</interface>
