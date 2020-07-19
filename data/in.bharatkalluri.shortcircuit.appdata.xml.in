@@ -4,9 +4,15 @@
 <component type="desktop">
     <id>in.bharatkalluri.shortcircuit</id>
     <name>Short Circuit</name>
+    <summary>Developer scratchpad</summary>
     <developer_name>Bharat Kalluri</developer_name>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0+</project_license>
+    <description>
+        <p>Short Circuit is a developer scratchpad made for GNOME!</p>
+        <p>The next time you copy paste some text to do some text manipulation like base64 encode/decode, json formatting etc..</p>
+        <p>You can just copy paste in shortcircuit and control T your way through everything!</p>
+    </description>
     <url type="homepage">https://gitlab.gnome.org/Bharatkalluri/short-circuit</url>
     <screenshots>
         <screenshot type="default">
@@ -19,8 +25,7 @@
        <release version="0.1" timestamp="1594844650">
             <description>
                 <p>Short Circuit is a developer scratchpad made for GNOME!</p>
-				<p>The next time you copy paste some text to do some text manipulation like base64 encode/decode, json formatting etc..</p>
-				<p>You can just copy paste in shortcircuit and control T your way through everything!</p>
+				<p>This is the first MVP release, many more features will be added in the future!</p>
             </description>
         </release>
     </releases>
