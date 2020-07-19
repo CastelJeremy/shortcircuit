@@ -30,6 +30,27 @@ class Application(Gtk.Application):
         super().__init__(application_id='in.bharatkalluri.shortcircuit',
                          flags=Gio.ApplicationFlags.FLAGS_NONE)
 
+        self.setup_actions()
+
+    def _add_action(self, key, callback, prop=None):
+        action = Gio.SimpleAction.new(key, None)
+        action.connect("activate", callback)
+        if prop:
+            self.bind_property(prop, action, "enabled", GObject.BindingFlags.INVERT_BOOLEAN)
+        self.add_action(action)
+        return action
+
+    def setup_actions(self):
+        self._add_action("about", self._on_about)
+
+    def _on_about(a,b,c):
+        builder = Gtk.Builder()
+        builder.add_from_resource("/in/bharatkalluri/shortcircuit/ui/about_dialog.ui")
+        dialog = builder.get_object("about_dialog")
+        dialog.set_transient_for(ShortcircuitWindow.get_instance())
+        dialog.run()
+        dialog.destroy()
+
     def do_activate(self):
         win = self.props.active_window
         if not win:

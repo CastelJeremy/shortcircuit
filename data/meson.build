@@ -39,3 +39,11 @@ if compile_schemas.found()
     args: ['--strict', '--dry-run', meson.current_source_dir()]
   )
 endif
+
+
+icondir = join_paths(get_option('datadir'), 'icons/hicolor')
+install_data(
+    'icons/'+'in.bharatkalluri.shortcircuit'+'.svg',
+    install_dir: join_paths(icondir, 'scalable/apps')
+)
+

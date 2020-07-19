@@ -15,85 +15,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from gi.repository import Gtk, Gdk
-from shortcircuit.core.transformer import TRANSFORMER_FN_MAP, transform_str
-
-@Gtk.Template(resource_path='/in/bharatkalluri/shortcircuit/ui/transformer_search_entry.ui')
-class TransformerSearchEntry(Gtk.SearchEntry):
-    __gtype_name__ = 'transformer_search_entry'
-
-    visible = False
-
-    @staticmethod
-    def get_transformer_store() -> Gtk.ListStore:
-        transformer_store = Gtk.ListStore(str)
-        for transformer in TRANSFORMER_FN_MAP.keys():
-            transformer_store.append([transformer])
-        return transformer_store
-
-    def match_anywhere(
-            self,
-            completion: Gtk.EntryCompletion,
-            string_entered: str,
-            tree_iter: Gtk.TreeIter,
-            _
-    ):
-        string_in_model = completion.get_model()[tree_iter][0]
-        return string_entered in string_in_model.lower()
-
-    def on_transformer_entry_changed(
-            self,
-            _: Gtk.EntryCompletion,
-            list_store: Gtk.ListStore,
-            tree_iter: Gtk.TreeIter
-    ):
-        if tree_iter is not None:
-            transformer_title = list_store[tree_iter][0]
-            ShortcircuitWindow.get_instance().apply_transformer(transformer=transformer_title)
-            self.toggle_visibility()
-
-    def toggle_visibility(self):
-        self.set_text('')
-        if self.visible:
-            self.hide()
-        else:
-            self.show()
-            self.grab_focus()
-        self.visible = not self.visible
-
-    def on_key_release(self, widget, ev):
-        if ev.keyval == Gdk.KEY_Escape:
-            self.toggle_visibility()
-
-    def _set_completion(self):
-        self.entry_completion = Gtk.EntryCompletion()
-        self.entry_completion.set_model(self.transformer_store)
-        self.entry_completion.connect("match-selected", self.on_transformer_entry_changed)
-        self.entry_completion.set_text_column(0)
-        self.entry_completion.set_minimum_key_length(0)
-        self.entry_completion.set_match_func(self.match_anywhere, None)
-
-        self.set_completion(self.entry_completion)
-
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.transformer_store = self.get_transformer_store()
-        self._set_completion()
-
-        self.set_valign(Gtk.Align.CENTER)
-        self.set_halign(Gtk.Align.CENTER)
-
-        self.connect("key-release-event", self.on_key_release)
-
-
-    instance = None
-
-    @staticmethod
-    def get_instance():
-        if TransformerSearchEntry.instance is None:
-            TransformerSearchEntry.instance = TransformerSearchEntry()
-        return TransformerSearchEntry.instance
+from gi.repository import Gtk, Gdk, Gio
+from shortcircuit.widgets.transformer_search_entry import TransformerSearchEntry, transform_str
 
 
 @Gtk.Template(resource_path='/in/bharatkalluri/shortcircuit/ui/window.ui')
@@ -102,6 +25,7 @@ class ShortcircuitWindow(Gtk.ApplicationWindow):
 
     source_view_overlay: Gtk.Overlay = Gtk.Template.Child()
     source_view: Gtk.TextView = Gtk.Template.Child()
+    primary_menu_button: Gtk.MenuButton = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -112,6 +36,12 @@ class ShortcircuitWindow(Gtk.ApplicationWindow):
         self.source_view_overlay.add_overlay(self.transformer_search_entry)
 
         self.setup_accelerators()
+        self.set_menu_items()
+
+    def set_menu_items(self):
+        menu: Gio.Menu = Gio.Menu()
+        menu.append_item(Gio.MenuItem.new(_("About"), "app.about"))
+        self.primary_menu_button.set_menu_model(menu)
 
     @staticmethod
     def _get_buffer_contents(buffer: Gtk.TextBuffer) -> str:
