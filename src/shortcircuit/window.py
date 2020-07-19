@@ -67,7 +67,6 @@ class ShortcircuitWindow(Gtk.ApplicationWindow):
             ___: int,
             ____: Gdk.ModifierType,
     ):
-        print("On Control T")
         self.transformer_search_entry.toggle_visibility()
 
     @staticmethod

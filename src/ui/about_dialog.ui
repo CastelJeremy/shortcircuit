@@ -8,8 +8,10 @@
     <property name="program_name">Short Circuit</property>
     <property name="version">0.1</property>
     <property name="comments" translatable="yes">A developer scratchpad made for GNOME!</property>
-    <property name="website">https://github.com/bharatkalluri/shortcircuit</property>
+    <property name="website">https://gitlab.gnome.org/Bharatkalluri/short-circuit</property>
+    <property name="authors">Bharat Kalluri</property>
     <property name="logo_icon_name">in.bharatkalluri.shortcircuit</property>
+    <property name="license_type">gpl-3-0</property>
     <child internal-child="vbox">
       <object class="GtkBox">
         <property name="can_focus">False</property>
