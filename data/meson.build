@@ -2,7 +2,8 @@ pkgdatadir = join_paths(get_option('prefix'), get_option('datadir'), meson.proje
 moduledir = join_paths(pkgdatadir, 'shortcircuit')
 gnome = import('gnome')
 
-gnome.compile_resources('shortcircuit',
+gnome.compile_resources(
+  'in.bharatkalluri.shortcircuit',
   'in.bharatkalluri.shortcircuit.gresource.xml',
   gresource_bundle: true,
   install: true,
@@ -52,7 +53,7 @@ if compile_schemas.found()
 endif
 
 install_data(
-    'icons/'+'in.bharatkalluri.shortcircuit'+'.svg',
-    install_dir: join_paths(join_paths(get_option('datadir'), 'icons/hicolor'), 'scalable/apps')
+    'icons/in.bharatkalluri.shortcircuit.svg',
+    install_dir: join_paths(get_option('datadir'), 'icons/hicolor', 'scalable/apps')
 )
 
