@@ -16,7 +16,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from gi.repository import Gtk, Gdk
-from shortcircuit.core.transformer import TRANSFORMER_FN_MAP
+from shortcircuit.core.transformer import TRANSFORMER_FN_MAP, transform_str
 
 @Gtk.Template(resource_path='/in/bharatkalluri/shortcircuit/ui/transformer_search_entry.ui')
 class TransformerSearchEntry(Gtk.SearchEntry):

@@ -27,8 +27,8 @@
       <object class="GtkHeaderBar" id="header_bar">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="title">Short Cicuit</property>
-        <property name="subtitle" translatable="yes">A developer scratchpad</property>
+        <property name="title">Short Circuit</property>
+        <property name="subtitle" translatable="yes">Press Ctrl+T to get started!</property>
         <property name="show_close_button">True</property>
       </object>
     </child>
