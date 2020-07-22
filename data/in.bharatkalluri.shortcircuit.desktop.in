@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=shortcircuit
-Exec=shortcircuit
+Name=Shortcircuit
+Exec=in.bharatkalluri.shortcircuit
 Terminal=false
 Type=Application
 Icon=in.bharatkalluri.shortcircuit

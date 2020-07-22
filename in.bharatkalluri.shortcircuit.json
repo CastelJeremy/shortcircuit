@@ -23,7 +23,7 @@
     ],
     "modules" : [
         {
-            "name" : "shortcircuit",
+            "name" : "Shortcircuit",
             "builddir" : true,
             "buildsystem" : "meson",
             "sources" : [

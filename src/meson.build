@@ -10,8 +10,8 @@ conf.set('pkgdatadir', pkgdatadir)
 conf.set('pythondir', pythondir)
 
 configure_file(
-  input: 'in.bharatkalluri.shortcircuit.in',
-  output: 'in.bharatkalluri.shortcircuit',
+  input: meson.project_name() + '.in',
+  output: meson.project_name(),
   configuration: conf,
   install: true,
   install_dir: get_option('bindir')
