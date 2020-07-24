@@ -15,9 +15,7 @@
     <url type="homepage">https://gitlab.gnome.org/Bharatkalluri/short-circuit</url>
     <screenshots>
         <screenshot type="default">
-			<screenshot type="default">
-            	<image>https://gitlab.gnome.org/Bharatkalluri/short-circuit/-/raw/master/media/screenshot.png</image>
-        	</screenshot>
+        	<image>https://gitlab.gnome.org/Bharatkalluri/short-circuit/-/raw/master/media/screenshot.png</image>
         </screenshot>
     </screenshots>
     <releases>
