@@ -65,9 +65,18 @@ class TransformerSearchEntry(Gtk.SearchEntry):
         super().__init__(**kwargs)
         self.transformer_store = self.get_transformer_store()
         self._set_completion()
-
-        self.set_valign(Gtk.Align.CENTER)
-        self.set_halign(Gtk.Align.CENTER)
+        screen = Gdk.Screen.get_default()
+        provider = Gtk.CssProvider()
+        style_context = Gtk.StyleContext()
+        style_context.add_provider_for_screen(
+            screen, provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        )
+        css = b"""
+        .transformer_dropdown {
+            box-shadow: 0px 0px 50px -5px rgba(0,0,0,0.75);
+        }
+        """
+        provider.load_from_data(css)
 
         self.connect("key-release-event", self.on_key_release)
 
