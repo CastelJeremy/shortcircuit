@@ -38,6 +38,17 @@ def unix_timestamp_to_datetime(buffer: str):
     time_stamp = int(buffer)
     return datetime.datetime.utcfromtimestamp(time_stamp).strftime('%Y-%m-%d %H:%M:%SZ')
 
+def jwt_decode(buffer: str):
+    raw_token_arr = buffer.split('.')
+    if len(raw_token_arr) != 3:
+        raise Exception("The token does not contain all three parts!")
+    encoded_header, encoded_payload, signature = raw_token_arr
+    return json.dumps({
+        "header": json.loads(base64_decode(encoded_header)),
+        "payload": json.loads(base64_decode(encoded_payload)),
+        "signature": signature,
+    })
+
 
 def transform_str(str_input: str, transformer: str):
     transformer_fn = TRANSFORMER_FN_MAP.get(transformer)
@@ -54,4 +65,5 @@ TRANSFORMER_FN_MAP = {
     "HTML Encode": html_escape,
     "HTML Decode": html_unescape,
     "Epoch Converter": unix_timestamp_to_datetime,
+    "JWT Decode": jwt_decode,
 }
