@@ -16,6 +16,16 @@ def format_json(buffer: str):
     except:
         raise Exception("JSON is invalid!")
 
+def csv_to_json(buffer: str):
+    header, *data = buffer.split("\n")
+    data = [el for el in data if el]
+    return json.dumps(list([
+        dict(
+            zip(header.split(','), line.split(','))
+        )
+        for line in data
+    ]))
+
 
 def transform_str(str_input: str, transformer: str):
     transformer_fn = TRANSFORMER_FN_MAP.get(transformer)
@@ -27,5 +37,6 @@ def transform_str(str_input: str, transformer: str):
 TRANSFORMER_FN_MAP = {
     "Base64 encode": base64_encode,
     "Base64 decode": base64_decode,
-    "JSON Format": format_json,
+    "Format JSON": format_json,
+    "CSV to JSON": csv_to_json,
 }

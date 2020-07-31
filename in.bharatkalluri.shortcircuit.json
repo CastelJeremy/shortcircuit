@@ -33,10 +33,5 @@
                 }
             ]
         }
-    ],
-    "build-options" : {
-        "env" : {
-            "GTK_DEBUG" : "interactive"
-        }
-    }
+    ]
 }
