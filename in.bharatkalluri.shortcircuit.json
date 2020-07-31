@@ -22,6 +22,20 @@
         "*.a"
     ],
     "modules" : [
+	{
+            "name": "gtksourceview-git",
+            "buildsystem": "meson",
+            "config-opts": [
+                "--buildtype=release"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/gtksourceview",
+                    "commit": "02be7aad3726bb4de1efb2bca541601e1021b66f"
+                }
+            ]
+        },
         {
             "name" : "Shortcircuit",
             "builddir" : true,

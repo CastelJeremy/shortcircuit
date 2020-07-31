@@ -15,16 +15,17 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from gi.repository import Gtk, Gdk, Gio
+from gi.repository import Gtk, Gdk, Gio, GtkSource, GObject
 from shortcircuit.widgets.transformer_search_entry import TransformerSearchEntry, transform_str
 
+GObject.type_register(GtkSource.View)
 
 @Gtk.Template(resource_path='/in/bharatkalluri/shortcircuit/ui/window.ui')
 class ShortcircuitWindow(Gtk.ApplicationWindow):
     __gtype_name__ = 'shortcircuit_window'
 
     source_view_overlay: Gtk.Overlay = Gtk.Template.Child()
-    source_view: Gtk.TextView = Gtk.Template.Child()
+    source_view: GtkSource = Gtk.Template.Child()
     primary_menu_button: Gtk.MenuButton = Gtk.Template.Child()
 
     def __init__(self, **kwargs):
