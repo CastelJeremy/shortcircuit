@@ -25,6 +25,18 @@
 				<p>This is the first MVP release, many more features will be added in the future!</p>
             </description>
         </release>
+        <release version="0.2" timestamp="1596229271">
+            <description>
+                <p>This release comes with a revamped transformer picker and a bunch of new Transformers!</p>
+                <p>Added transfomers:</p>
+                <ul>
+                    <li>CSV to JSON</li>
+                    <li>HTML encode/decode</li>
+                    <li>JWT Decode</li>
+                    <li>Timestamp to Date Time</li>
+                </ul>
+            </description>
+        </release>
     </releases>
     <launchable type="desktop-id">in.bharatkalluri.shortcircuit.desktop</launchable>
     <content_rating type="oars-1.1">

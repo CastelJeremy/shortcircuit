@@ -31,7 +31,6 @@ class Application(Gtk.Application):
                          flags=Gio.ApplicationFlags.FLAGS_NONE)
 
         self.setup_actions()
-        self.setup_styles()
 
     def _add_action(self, key, callback, prop=None):
         action = Gio.SimpleAction.new(key, None)
@@ -43,14 +42,6 @@ class Application(Gtk.Application):
 
     def setup_actions(self):
         self._add_action("about", self._on_about)
-
-    def setup_styles(self):
-        print("Loading css")
-        provider = Gtk.CssProvider()
-        provider.load_from_resource('/in/bharatkalluri/shortcircuit/styles/style.css')
-        Gtk.StyleContext().add_provider_for_screen(Gdk.Screen.get_default(), provider,
-                                                   Gtk.STYLE_PROVIDER_PRIORITY_USER)
-        Gtk.IconTheme.get_default().add_resource_path("/in/bharatkalluri/shortcircuit/icons")
 
 
     def _on_about(a,b,c):
