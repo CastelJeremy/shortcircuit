@@ -1,5 +1,6 @@
 import base64
 import json
+import html
 
 
 def base64_encode(buffer: str):
@@ -26,6 +27,12 @@ def csv_to_json(buffer: str):
         for line in data
     ]))
 
+def html_escape(buffer: str):
+    return html.escape(buffer)
+
+def html_unescape(buffer: str):
+    return html.unescape(buffer)
+
 
 def transform_str(str_input: str, transformer: str):
     transformer_fn = TRANSFORMER_FN_MAP.get(transformer)
@@ -39,4 +46,6 @@ TRANSFORMER_FN_MAP = {
     "Base64 decode": base64_decode,
     "Format JSON": format_json,
     "CSV to JSON": csv_to_json,
+    "HTML Encode": html_escape,
+    "HTML Decode": html_unescape,
 }
