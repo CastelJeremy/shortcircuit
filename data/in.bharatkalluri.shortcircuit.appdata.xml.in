@@ -19,12 +19,6 @@
         </screenshot>
     </screenshots>
     <releases>
-       <release version="0.1" timestamp="1594844650">
-            <description>
-                <p>Short Circuit is a developer scratchpad made for GNOME!</p>
-				<p>This is the first MVP release, many more features will be added in the future!</p>
-            </description>
-        </release>
         <release version="0.2" timestamp="1596229271">
             <description>
                 <p>This release comes with a revamped transformer picker and a bunch of new Transformers!</p>
@@ -35,6 +29,12 @@
                     <li>JWT Decode</li>
                     <li>Timestamp to Date Time</li>
                 </ul>
+            </description>
+        </release>
+       <release version="0.1" timestamp="1594844650">
+            <description>
+                <p>Short Circuit is a developer scratchpad made for GNOME!</p>
+				<p>This is the first MVP release, many more features will be added in the future!</p>
             </description>
         </release>
     </releases>
