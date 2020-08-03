@@ -4,6 +4,13 @@
 
 <p>A developer scratchpad built for GNOME.</p>
 
+## Install
+
+<a href="https://flathub.org/apps/details/in.bharatkalluri.shortcircuit">
+<img src="https://flathub.org/assets/badges/flathub-badge-i-en.png" width="190px" />
+</a>
+
+
 ## Screenshot
 
 ![Screenshot](./media/screenshot.png)
